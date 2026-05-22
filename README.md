@@ -17,7 +17,6 @@
 
 - **Frontend**: HTML5, CSS3 (Flexbox/Grid), JavaScript (ES6+)
 - **API**: [Deezer Public API](https://developers.deezer.com/api) – без ключа, через прокси CORS
-- **Прокси**: `corsproxy.io` для обхода CORS
 - **Хостинг**: GitHub Pages
 
 ## Основной функционал
@@ -33,7 +32,7 @@
 
 ## Скриншоты
 
-*Примеры интерфейса (вставьте свои изображения):*
+*Примеры интерфейса:*
 
 ![Главный экран (тёмная тема)](screenshots/hero-dark.png)
 ![Детали артиста с плеером](screenshots/artist-detail-player.png)
