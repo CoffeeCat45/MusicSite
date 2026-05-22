@@ -35,10 +35,9 @@
 
 *Примеры интерфейса (вставьте свои изображения):*
 
-- **Главный экран (тёмная тема)** – `screenshots/hero-dark.png`
-- **Поиск треков** – `screenshots/track-search.png`
-- **Детали артиста с плеером** – `screenshots/artist-detail-player.png`
-- **Светлая тема** – `screenshots/light-theme.png`
+![Главный экран (тёмная тема)](screenshots/hero-dark.png)
+![Детали артиста с плеером](screenshots/artist-detail-player.png)
+![Светлая тема](screenshots/light-theme.png)
 
 ## Посетите работающий веб-сайт
 
