@@ -1,0 +1,21 @@
+{
+  "name": "MusicSite – Deezer гид",
+  "short_name": "MusicSite",
+  "description": "Поиск музыки, популярные альбомы, артисты и треки из Deezer. Слушайте превью и открывайте новое.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2DD4BF",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

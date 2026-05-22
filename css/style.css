@@ -1,0 +1,626 @@
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.5;
+  transition: background-color 0.3s, color 0.2s;
+  font-family: "Inter";
+}
+
+/*Контейнер*/
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.section {
+  padding: 60px 0;
+}
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--text-primary);
+}
+
+/*Шапка*/
+.header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+.logo__icon {
+  width: 32px;
+  height: 32px;
+}
+.nav__list {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav__link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav__link:hover {
+  color: var(--accent);
+}
+.header__actions {
+  display: flex;
+  gap: 12px;
+}
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 30px;
+  transition: background 0.2s;
+  color: var(--text-primary);
+}
+.theme-toggle:hover {
+  background: var(--border);
+}
+.socials img {
+  width: 24px;
+  height: 24px;
+}
+
+/*Скрытие секции деталей артиста*/
+#artistDetail.hidden {
+  display: none;
+}
+/*Стили для контейнера кнопки загрузки треков*/
+.load-more-tracks-wrapper {
+  text-align: center;
+  margin-top: 30px;
+  display: none;
+}
+/* Бургер*/
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 30px;
+  color: var(--text-primary);
+  transition: background 0.2s;
+  z-index: 101;
+}
+.burger:hover {
+  background: var(--border);
+}
+
+/* Мобильное меню*/
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 20px;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+.mobile-menu.active {
+  display: block;
+}
+.mobile-menu__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+.mobile-menu__list a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/*Hero*/
+.hero {
+  background: var(--bg-color);
+  padding: 60px 0;
+  text-align: center;
+}
+.hero__title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+.hero__subtitle {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+.search-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.search-input {
+  flex: 2;
+  min-width: 200px;
+  padding: 12px 20px;
+  border-radius: 60px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 16px;
+  outline: none;
+}
+.search-type {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: var(--surface);
+  padding: 0 16px;
+  border-radius: 60px;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+.search-btn {
+  background: var(--accent);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 60px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: var(--button-text);
+}
+.search-btn:hover {
+  background: var(--accent-dark);
+}
+
+/*Сетка карточек*/
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+.card__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+.card__content {
+  padding: 16px;
+}
+.card__title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
+}
+.card__subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.card__meta {
+  font-size: 13px;
+  color: var(--accent);
+}
+
+/*Кнопка превью в результатах поиска треков*/
+.track-play-preview {
+  background: var(--accent);
+  border: none;
+  border-radius: 30px;
+  padding: 8px 12px;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--button-text);
+  transition: 0.2s;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.track-play-preview:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+.track-play-preview:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/*громкость в карточке трека */
+.track-volume-control {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.track-volume-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+.track-volume-icon:hover {
+  opacity: 0.7;
+}
+.track-volume-slider {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Детали артиста*/
+.back-btn {
+  background: none;
+  border: 1px solid var(--border);
+  padding: 8px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-size: 16px;
+  transition: 0.2s;
+  color: var(--text-primary);
+}
+.back-btn:hover {
+  background: var(--accent);
+  color: var(--button-text);
+  border-color: var(--accent);
+}
+.artist-info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.artist-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.artist-name {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.artist-fans {
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+.artist-tracks-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+.tracks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.track-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--surface);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.track-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+.play-btn {
+  background: var(--accent);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
+  color: var(--button-text);
+}
+.play-btn:hover {
+  transform: scale(1.05);
+  background: var(--accent-dark);
+}
+.track-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.track-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.track-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.track-duration {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+.equalizer {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 20px;
+}
+.equalizer span {
+  width: 3px;
+  height: 10px;
+  background-color: var(--accent);
+  border-radius: 2px;
+  transition: height 0.1s ease;
+}
+.track-item.playing .equalizer span {
+  animation: equalize 0.8s infinite ease-in-out;
+}
+.track-item.playing .equalizer span:nth-child(1) {
+  animation-delay: 0s;
+  height: 12px;
+}
+.track-item.playing .equalizer span:nth-child(2) {
+  animation-delay: 0.2s;
+  height: 20px;
+}
+.track-item.playing .equalizer span:nth-child(3) {
+  animation-delay: 0.4s;
+  height: 8px;
+}
+.track-item.playing .equalizer span:nth-child(4) {
+  animation-delay: 0.1s;
+  height: 16px;
+}
+
+@keyframes equalize {
+  0%,
+  100% {
+    height: 10px;
+  }
+  50% {
+    height: 20px;
+  }
+}
+.track-time {
+  font-size: 13px;
+  color: var(--accent);
+  font-family: monospace;
+  min-width: 70px;
+}
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.volume-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+.volume-slider {
+  width: 80px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 4px;
+  outline: none;
+}
+@media (max-width: 600px) {
+  .volume-slider {
+    width: 60px;
+  }
+}
+
+/*Подписка*/
+.subscribe-section {
+  background: var(--surface);
+  text-align: center;
+}
+.subscribe-description {
+  margin-bottom: 24px;
+  color: var(--text-secondary);
+}
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.subscribe-form input {
+  padding: 12px 20px;
+  border-radius: 60px;
+  border: 1px solid var(--border);
+  background: var(--bg-color);
+  color: var(--text-primary);
+  width: 280px;
+  font-size: 16px;
+}
+.subscribe-form button {
+  background: var(--accent);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 60px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  color: var(--button-text);
+}
+.subscribe-form button:hover {
+  background: var(--accent-dark);
+}
+
+/*Футер*/
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 40px 0 20px;
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+.footer__col a {
+  display: block;
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+.footer__col a:hover {
+  color: var(--accent);
+}
+.socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+}
+.socials a {
+  display: inline-block;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+.socials a:hover {
+  color: var(--accent);
+}
+
+/* Кнопки загрузки*/
+.load-more-wrapper {
+  text-align: center;
+  margin-top: 48px;
+}
+.load-more-tracks-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+.load-more-btn {
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  padding: 10px 28px;
+  border-radius: 40px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.load-more-btn:hover {
+  background: var(--accent);
+  color: var(--button-text);
+}
+.load-more-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/*Адаптив бургера*/
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  .burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero__title {
+    font-size: 36px;
+  }
+  .search-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-type {
+    justify-content: center;
+  }
+}

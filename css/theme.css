@@ -1,0 +1,27 @@
+/* Светлая тема (мягкие тона) */
+:root {
+  --bg-color: #f0f4f8;
+  --surface: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --accent: #2dd4bf;
+  --accent-dark: #14b8a6;
+  --border: #cbd5e1;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.1);
+  --button-text: #0f172a;
+}
+
+/* Тёмная тема */
+body.dark {
+  --bg-color: #0f172a;
+  --surface: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent: #2dd4bf;
+  --accent-dark: #14b8a6;
+  --border: #334155;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.5);
+  --button-text: #0f172a;
+}

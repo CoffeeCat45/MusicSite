@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    <title>MusicSite – Deezer гид</title>
+    <meta name="description" content="Популярные альбомы, артисты и треки из Deezer."/>
+    <meta name="theme-color" content="#2DD4BF" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <a href="index.html" class="logo" id="logoLink">
+          <img src="assets/icons/logo.png" alt="Логотип" class="logo__icon" />
+          <span class="logo__text">MusicSite</span>
+        </a>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li><a href="#albums" class="nav__link js-scroll">Альбомы</a></li>
+            <li>
+              <a href="#subscribe" class="nav__link js-scroll">Подписка</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Тёмная тема">
+            🌙
+          </button>
+          <button class="burger" id="burgerBtn" aria-label="Меню">☰</button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-menu__list">
+          <li><a href="#albums" class="js-scroll">Альбомы</a></li>
+          <li><a href="#subscribe" class="js-scroll">Подписка</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__container">
+          <h1 class="hero__title">Музыка без границ</h1>
+          <p class="hero__subtitle">
+            Популярные альбомы, артисты и треки Deezer. Исследуйте и
+            наслаждайтесь.
+          </p>
+          <div class="search-panel">
+            <input type="text" id="searchInput" class="search-input" placeholder="Поиск альбомов, артистов или треков..."/>
+            <div class="search-type">
+              <label
+                ><input type="radio" name="searchType" value="album" checked />
+                Альбомы</label
+              >
+              <label
+                ><input type="radio" name="searchType" value="artist" />
+                Артисты</label
+              >
+              <label
+                ><input type="radio" name="searchType" value="track" />
+                Треки</label
+              >
+            </div>
+            <button id="searchBtn" class="search-btn">Искать</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="albums" class="albums-section section">
+        <div class="container">
+          <h2 class="section-title" id="sectionTitle">Популярные альбомы</h2>
+          <div class="cards-grid" id="cardsGrid"></div>
+          <div class="load-more-wrapper">
+            <button id="loadMoreBtn" class="load-more-btn">
+              Загрузить ещё
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="artistDetail" class="artist-detail section hidden" aria-hidden="true">
+        <div class="container">
+          <button id="backToAlbumsBtn" class="back-btn">
+            ← Назад к альбомам
+          </button>
+          <div class="artist-info" id="artistInfo"></div>
+          <h3 class="artist-tracks-title">Треки артиста</h3>
+          <div class="tracks-list" id="tracksList"></div>
+          <div class="load-more-tracks-wrapper" id="loadMoreTracksWrapper">
+            <button id="loadMoreTracksBtn" class="load-more-btn">
+              Загрузить ещё треки
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="subscribe" class="subscribe-section section">
+        <div class="container">
+          <h2 class="section-title">Музыкальные новости</h2>
+          <p class="subscribe-description">
+            Подпишитесь, чтобы получать подборки лучших новинок.
+          </p>
+          <form id="subscribeForm" class="subscribe-form">
+            <input
+              type="email"
+              id="subEmail"
+              placeholder="Ваш email"
+              required
+            />
+            <button type="submit">Подписаться</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__container">
+        <div class="footer__col">
+          <a href="index.html" class="logo" id="logoLink">
+            <img src="assets/icons/logo.png" alt="Логотип" class="logo__icon" />
+            <span class="logo__text">MusicSite</span>
+          </a>
+          <p>© 2026 MusicSite. Все права защищены.</p>
+        </div>
+        <div class="footer__col">
+          <h4>Контакты</h4>
+          <a href="mailto:info@musicsite.ru">info@musicsite.ru</a>
+          <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+          <div class="socials">
+            <a href="#" aria-label="Telegram">
+              <img src="assets/icons/telegram.png" alt="Telegram" />
+            </a>
+            <a href="#" aria-label="VK">
+              <img src="assets/icons/vk.png" alt="VK" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/theme.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
