@@ -40,4 +40,4 @@
 
 ## Посетите работающий веб-сайт
 
-[https://ваш-username.github.io/musicsite](https://ваш-username.github.io/musicsite)
+[https://ваш-username.github.io/musicsite](https://coffeecat45.github.io/MusicSite/)
